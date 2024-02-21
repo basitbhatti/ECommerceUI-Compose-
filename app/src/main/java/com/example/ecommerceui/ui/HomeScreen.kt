@@ -13,9 +13,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -354,7 +355,11 @@ fun PopularProductSection(listOfProducts: List<Product>) {
             color = Color.Black
         )
 
-        LazyVerticalGrid(columns = GridCells.Adaptive(150.dp)) {
+        LazyVerticalStaggeredGrid(
+            columns = StaggeredGridCells.Adaptive(150.dp),
+            verticalItemSpacing = 10.dp,
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
             items(listOfProducts.size) {
                 val product = listOfProducts[it]
                 ProductCard(product)
@@ -396,8 +401,9 @@ fun ProductCard(product: Product) {
             Image(
                 painter = painterResource(id = product.imageId),
                 modifier = Modifier
-                    .fillMaxSize()
-                    .size(100.dp),
+                    .padding(horizontal = 10.dp)
+                    .fillMaxWidth()
+                    .wrapContentHeight(),
                 contentDescription = ""
             )
 
