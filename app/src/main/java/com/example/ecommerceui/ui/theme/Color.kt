@@ -13,7 +13,7 @@ val Pink40 = Color(0xFF7D5260)
 
 val LightRed = Color(0xFFFF8485)
 val BGWhite = Color(0xFFF8F8F8)
-val WhiteTransparent = Color(0x99F8F8F8)
+val WhiteTransparent = Color(0x74F8F8F8)
 val GreyIcon = Color(0xFF7E7E7E)
 val LightGreenCard = Color(0xFFECF4C5)
 val LightOrangeCard = Color(0xFFF7E3E2)

@@ -227,14 +227,25 @@ fun BannerCardSection() {
 
             Column(
                 modifier = Modifier
-                    .fillMaxSize(0.3f)
+                    .fillMaxHeight()
+                    .fillMaxWidth(0.35f)
                     .clip(RoundedCornerShape(10.dp))
                     .background(WhiteTransparent),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
+                Text(text = "Get the special discount", fontSize = 10.sp, fontFamily = fontFamily, color = Color.White)
 
+                Text(text = "50%\nOFF", fontSize = 46.sp, lineHeight = 45.sp, fontFamily = fontFamily, color = Color.White)
+
+            }
+
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                Image(
+                    painter = painterResource(id = R.drawable.shoe),
+                    contentDescription = "",
+                    modifier = Modifier.fillMaxSize())
             }
 
         }
