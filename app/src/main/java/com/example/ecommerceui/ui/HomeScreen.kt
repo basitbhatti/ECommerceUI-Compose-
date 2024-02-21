@@ -355,6 +355,7 @@ fun PopularProductSection(listOfProducts: List<Product>) {
             color = Color.Black
         )
 
+        //Replaced this.
         LazyVerticalStaggeredGrid(
             columns = StaggeredGridCells.Adaptive(150.dp),
             verticalItemSpacing = 10.dp,
